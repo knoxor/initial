@@ -1,0 +1,26 @@
+  
+  ## create Grandfather/Father/Mother
+  http://localhost:8080/familyTree/member -H 'Content-Type: application/json' 
+  -d '{
+	"name":"edward",
+	"surname":"murphy",
+	"age":"88",
+	"hobby":"poetry",
+	"son": {
+	    "name": "edward",
+	    "surname": "whatever",
+	    "age": 55,
+	    "hobby": "running"		
+	},
+	"daughter": {
+		"name": "anne",
+		"surname": "sharapova",
+		"age": 58,
+		"hobby": "reading"		
+	}
+}'
+
+# get saved members
+curl -X GET http://localhost:8080/familyTree/member/0
+curl -X GET http://localhost:8080/familyTree/member/1
+curl -X GET http://localhost:8080/familyTree/member/2
